@@ -9,48 +9,36 @@ db.create_all()
 Role.insert_roles()
 
 admin = User(name=u'root', email='root@gmail.com', password='password', major='administrator',
-             headline=u"临时管理员一枚", about_me=u"毕业于管理系,爱好读书,因此兼职图书馆管理员.")
-user1 = User(name=u'阿卡林', email='akarin@Gmail.com', password='123456', major='Computer Science', headline=u"普通的学生")
+             headline=u"One temporary administrator", about_me=u"Graduated from the Department of Management and likes to read, so part-time librarian.")
+admin2 = User(name=u'root2', email='root2@gmail.com', password='password', major='administrator',
+             headline=u"One temporary administrator", about_me=u"Graduated from the Department of Management and likes to read, so part-time librarian.")
+user1 = User(name=u'daday', email='graak82@test.com', password='123456', major='Computer Science', headline=u"Ordinary student")
 user2 = User(name=u'test', email='test@test.com', password='123456')
-user3 = User(name=u'小明', email='xiaoming@163.com', password='123456')
-user4 = User(name=u'李华', email='lihua@yahoo.com', password='123456')
+user3 = User(name=u'one', email='xiaoming@163.com', password='123456')
+user4 = User(name=u'two', email='lihua@yahoo.com', password='123456')
 
-book1 = Book(title=u"Flask Web 开发", subtitle=u"基于Python的Web应用开发框架", author=u"Miguel Grinberg", isbn='9787115373991',
-             tags_string=u"计算机,程序设计,Web开发", image='http://img3.douban.com/lpic/s27906700.jpg',
+book1 = Book(title=u"Flask Web Development", subtitle=u"Python-based web application development framework ", author=u"Miguel Grinberg", isbn='9787115373991',
+             tags_string=u"Computer, program design, web development ", image='http://img3.douban.com/lpic/s27906700.jpg',
              summary=u"""
-# 本书不仅适合初级Web开发人员学习阅读，更是Python程序员用来学习高级Web开发技术的优秀参考书。
-
-* 学习Flask应用的基本结构，编写示例应用；
-* 使用必备的组件，包括模板、数据库、Web表单和电子邮件支持；
-* 使用包和模块构建可伸缩的大型应用；
-* 实现用户认证、角色和个人资料；
-* 在博客网站中重用模板、分页显示列表以及使用富文本；
-* 使用基于Flask的REST式API，在智能手机、平板电脑和其他第三方客户端上实现可用功能；
-* 学习运行单元测试以及提升性能；
-* 将Web应用部署到生产服务器。
-""")
-book2 = Book(title=u"STL源码剖析", subtitle=u"庖丁解牛 恢恢乎游刃有余", author=u"侯捷", isbn='9787560926995',
-             tags_string=u"计算机,程序设计,C++", image='http://img3.doubanio.com/lpic/s1092076.jpg',
-             summary=u"""* 学习编程的人都知道，阅读、剖析名家代码乃是提高水平的捷径。源码之前，了无秘密。大师们的缜密思维、经验结晶、技术思路、独到风格，都原原本本体现在源码之中。
-* 这本书所呈现的源码，使读者看到vector的实现、list的实现、heap的实现、deque的实现、Red Black tree的实现、hash table的实现、set/map的实现；看到各种算法（排序、查找、排列组合、数据移动与复制技术）的实现；甚至还能够看到底层的memory pool和高阶抽象的traits机制的实现。""")
-book3 = Book(title=u"编译原理（原书第2版）", subtitle=u"原理、技术与工具",
+# This book is not only suitable for primary web developers to learn to learn, but also the excellent reference book for Python programmers to learn advanced web development technology. 
+* Learn the basic structure of the Flask application, write example applications; * Use the necessary components, including templates, databases, web forms, and email support; * Use the package and modules to build scalable large applications; * Implement user authentication, role, and personal information; * Reuse templates in blog sites, page display lists, and use rich text; * Use Flask-based REST API to implement available features on smartphones, tablets, and other third-party clients; * Learn run unit testing and improve performance; * Deploy web applications to the production server. """)
+book2 = Book(title=u"STL source code analysis ", subtitle=u" ", author=u"Hou Jie ", isbn='9787560926995',
+             tags_string=u"Computer, program design, C ++ ", image='http://img3.doubanio.com/lpic/s1092076.jpg',
+             summary=u"""* People who learn programming know that reading, profiling is a shortcut to improve the level. Before the source code, there is no secret. Masters' calm thinking, empirical crystallization, technical ideas, unique style, all original original this is in the source code. * The source code presented in this book makes the reader to see the realization of the VECTOR, the implementation of the List, the implementation of the Heap, the implementation of the demary, the implementation of the Red Black Tree, the implementation of Hash Table, SET /Implementation of MAP; see the implementation of various algorithms (sort, lookup, arrangement combination, data movement and replication technology); even can see the implementation of the underlying Memory Pool and high-order abstract traits mechanism. """)
+book3 = Book(title=u"Compilation principle (original book 2) ", subtitle=u"Principle, technology and tools ",
              author="Alfred V. Aho / Monica S.Lam / Ravi Sethi / Jeffrey D. Ullman ", isbn="9787111251217",
-             tags_string=u"计算机,编译原理", image='http://img3.douban.com/lpic/s3392161.jpg',
-             summary=u"""* 本书全面、深入地探讨了编译器设计方面的重要主题，包括词法分析、语法分析、语法制导定义和语法制导翻译、运行时刻环境、目标代码生成、代码优化技术、并行性检测以及过程间分析技术，并在相关章节中给出大量的实例。与上一版相比，本书进行了全面的修订，涵盖了编译器开发方面的最新进展。每章中都提供了大量的系统及参考文献。
-* 本书是编译原理课程方面的经典教材，内容丰富，适合作为高等院校计算机及相关专业本科生及研究生的编译原理课程的教材，也是广大技术人员的极佳参考读物。""")
-book4 = Book(title=u"深入理解计算机系统", author="Randal E.Bryant / David O'Hallaron", isbn="9787111321330",
-             tags_string=u"计算机,计算机系统", image='http://img3.douban.com/lpic/s4510534.jpg',
-             summary=u"""* 本书从程序员的视角详细阐述计算机系统的本质概念，并展示这些概念如何实实在在地影响应用程序的正确性、性能和实用性。全书共12章，主要内容包括信息的表示和处理、程序的机器级表示、处理器体系结构、优化程序性能、存储器层次结构、链接、异常控制流、虚拟存储器、系统级I/O、网络编程、并发编程等。书中提供大量的例子和练习，并给出部分答案，有助于读者加深对正文所述概念和知识的理解。
-* 本书的最大优点是为程序员描述计算机系统的实现细节，帮助其在大脑中构造一个层次型的计算机系统，从最底层的数据在内存中的表示到流水线指令的构成，到虚拟存储器，到编译系统，到动态加载库，到最后的用户态应用。通过掌握程序是如何映射到系统上，以及程序是如何执行的，读者能够更好地理解程序的行为为什么是这样的，以及效率低下是如何造成的。
-* 本书适合那些想要写出更快、更可靠程序的程序员阅读，也适合作为高等院校计算机及相关专业本科生、研究生的教材。""")
-book5 = Book(title=u"果壳中的C#", subtitle=u"C#5.0权威指南", author=u"阿坝哈瑞 (Joseph Albahari) / 阿坝哈瑞 (Ben Albahari)",
-             isbn="9787517010845", tags_string=u"计算机,程序设计,C#", image='http://img3.douban.com/lpic/s28152290.jpg',
-             summary=u"""* 《果壳中的c#——c#5.0权威指南》是一本c＃5.0的权威技术指南，也是第一本中文版c＃5.0的学习资料。本书通过26章的内容，系统、全面、细致地讲解了c#5.0从基础知识到各种高级特性的命令、语法和用法。本书的讲解深入浅出，同时为每一个知识点都专门设计了贴切、简单、易懂的学习案例，从而可以帮助读者准确地理解知识点的含义并快速地学以致用。本书与之前的c#4.0版本相比，还新增了丰富的并发、异步、动态编程、代码精练、安全、com交互等高级特性相关的内容。
-* 《果壳中的c#——c#5.0权威指南》还融汇了作者多年在软件开发及c#方面的研究及其实践经验，非常适合作为c#技术的一本通自学教程，亦是一本中高级c#技术人员不可多得的必备工具书。""")
-book6 = Book(title=u"算法导论（原书第2版）",
+             tags_string=u"Computer, compilation principle ", image='http://img3.douban.com/lpic/s3392161.jpg',
+             summary=u"""* This book is comprehensive and deeply explored important topics in compiler design, including lexical analysis, gramatic analysis, grammar guidance and grammatical translation, runtime environment, target code generation, code optimization technology, parallelism detection, and process Analyze technology and give a large number of examples in related chapters. Compared with the previous version, this book has been amended to cover the latest developments in compiler development. A large number of systems and references are available in each chapter. * This book is a classic textbook in compilation principle, rich in content, suitable for teaching materials for compilation of undergraduate students and graduate students in higher institutions, and is also an excellent reference book for special technicians. """)
+book4 = Book(title=u"In-depth understanding of computer system ", author="Randal E.Bryant / David O'Hallaron", isbn="9787111321330",
+             tags_string=u"Computer, computer system ", image='http://img3.douban.com/lpic/s4510534.jpg',
+             summary=u"""* This book describes the essential concept of computer systems from programmers, and demonstrates how these concepts actually affect the correctness, performance and practicality of the application. The book is 12 chapters, main contents include information representation and processing, program machine-level representation, processor architecture, optimization program performance, memory hierarchical, link, exception control flow, virtual memory, system level I /O, network programming, concurrent programming, etc. A large number of examples and exercises are provided in the book, and some answers are given to help readers to deepen the understanding of the concepts and knowledge of the body. * The biggest advantage of this book is to describe the implementation details of the computer system to help them construct a layered computer system in the brain, from the most underlying data to the configuration of the pipeline instruction, to the virtual memory, To the compilation system, to a dynamic load library, to the final user state application. How to map to the system by mastering the program, as well as how the program is executed, the reader can better understand why the program is like this, and how the efficiency is caused. * This book is suitable for programmers who want to write faster, more reliable procedures, and are also suitable as teaching materials for undergraduate students and related majors in higher institutions. """)
+book5 = Book(title=u"C # in the husk ", subtitle=u"C # 5.0 Authoritative Guide ", author=u"Aba Harry (Joseph Albahari) / Aba Harry (Ben Albahari)",
+             isbn="9787517010845", tags_string=u"Computer, program design, c # ", image='http://img3.douban.com/lpic/s28152290.jpg',
+             summary=u"""* "C # - C # 5.0 Authoritative Guide in the Case" is a C # 5.0 authoritative technical guide, and the first Chinese version C # 5.0 learning information. This book uses the content, system, comprehensive and meticulous command, syntax and usage of the C # 5.0 from the basics to the content, system, comprehensive and meticulousness. The book's explanation is in-depth, and it is specifically designed for every knowledge point, which can help readers accurately understand the meaning of knowledge points and quickly learn. Compared with the previous C # 4.0 version, it has also added a rich concurrent, asynchronous, dynamic programming, code refinement, security, and COM interaction. * "C # - C # 5.0 authority in the husk" also fusures the author's many years of research and practice experience in software development and C #, which is very suitable as a self-study tutorial for C # technology, is also a copy Middle-level C # technicians are a must-have tool book. """)
+book6 = Book(title=u"Algorithm introduction (original book 2) ",
              author="Thomas H.Cormen / Charles E.Leiserson / Ronald L.Rivest / Clifford Stein",
-             isbn="9787111187776", tags_string=u"计算机,算法", image='http://img3.doubanio.com/lpic/s1959967.jpg',
-             summary=u"这本书深入浅出，全面地介绍了计算机算法。对每一个算法的分析既易于理解又十分有趣，并保持了数学严谨性。本书的设计目标全面，适用于多种用途。涵盖的内容有：算法在计算中的作用，概率分析和随机算法的介绍。书中专门讨论了线性规划，介绍了动态规划的两个应用，随机化和线性规划技术的近似算法等，还有有关递归求解、快速排序中用到的划分方法与期望线性时间顺序统计算法，以及对贪心算法元素的讨论。此书还介绍了对强连通子图算法正确性的证明，对哈密顿回路和子集求和问题的NP完全性的证明等内容。全书提供了900多个练习题和思考题以及叙述较为详细的实例研究。")
+             isbn="9787111187776", tags_string=u"Computer, algorithm ", image='http://img3.doubanio.com/lpic/s1959967.jpg',
+             summary=u"This book is in-depth and comprehensive introduction to computer algorithms. Analysis of each algorithm is both easy to understand and very interesting, and maintains mathematical stringency. The design objectives of this book are suitable for use in a variety of purposes. The content covered is: the role of the algorithm in the calculation, probability analysis, and introduction of random algorithms. The book is specifically discussed, and the approximate algorithm of two applications, randomized and linear planning techniques of dynamic planning, etc., as well as the score-seeking method and the desired linear time order statistical algorithm for recreation, rapid sorting. And discussions on greedy algorithm elements. This book also introduces the proven of the correctness of strong connecting sub-graph algorithms, the certificate of NP completeness of the Hamilton loop and subsequent NP completeness. The whole book provides more than 900 exercises and thinking questions and a more detailed example study. ")
 logs = [Log(user1, book2), Log(user1, book3), Log(user1, book4), Log(user1, book6),
         Log(user2, book1), Log(user2, book3), Log(user2, book5),
         Log(user3, book2), Log(user3, book5)]
